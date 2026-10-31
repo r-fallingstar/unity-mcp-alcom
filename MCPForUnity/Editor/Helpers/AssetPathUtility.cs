@@ -226,6 +226,16 @@ namespace MCPForUnity.Editor.Helpers
                 return resolved;
             }
 
+            // VPM distributions bundle the matching server. Explicit overrides above still win.
+            var installedPackage = PackageInfo.FindForAssembly(typeof(AssetPathUtility).Assembly);
+            string packageRoot = installedPackage?.resolvedPath ?? GetMcpPackageRootPath();
+            if (!string.IsNullOrEmpty(packageRoot))
+            {
+                string bundledServer = Path.GetFullPath(Path.Combine(packageRoot, "Server~", GetPackageVersion()));
+                if (File.Exists(Path.Combine(bundledServer, "pyproject.toml")))
+                    return bundledServer;
+            }
+
             // Default to PyPI package (avoids Windows long path issues with git clone)
             string version = GetPackageVersion();
             if (version == "unknown")

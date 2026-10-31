@@ -1,114 +1,45 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-header-dark.png">
-    <img alt="MCP for Unity" src="docs/images/logo-header-light.png" width="400">
-  </picture>
-</p>
+# Unity MCP for ALCOM
 
-<div align="center">
+[CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) の非公式VPM配布用Forkです。元のMITライセンス・著作者・UnityのGUIDを維持し、ALCOMから導入・更新できます。
 
-[English](README.md) <img src="docs/images/connector.svg" alt="↔" height="14"> [简体中文](docs/i18n/README-zh.md) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [Discord](https://discord.gg/y4p8KfzrN4) <img src="docs/images/connector.svg" alt="↔" height="14"> [Wiki](https://coplaydev.github.io/unity-mcp/)
+**[ALCOMに追加するページ](https://r-fallingstar.github.io/unity-mcp-alcom/)**
 
-#### Proudly sponsored and maintained by [Aura](https://www.tryaura.dev/) — the AI assistant for Unreal & Unity.
-##### Now you can automate playtesting with [Autopilot](https://github.com/ramenvr/autopilot), the new open-source game tester.
+リポジトリURL:
 
-</div>
-
-<p align="center"><b>Create your Unity apps with LLMs.</b> MCP for Unity bridges AI assistants — Claude, Codex, VS Code, local LLMs, and more — with your Unity Editor via <a href="https://modelcontextprotocol.io/introduction">Model Context Protocol</a>. Give your LLM the tools to manage assets, control scenes, edit scripts, run tests, and automate your game dev workflows.</p>
-
-<p align="center">
-  <img alt="MCP for Unity building a scene" src="docs/images/building_scene.gif">
-</p>
-
----
-
-<!-- recent-updates:start -->
-<details>
-<summary><strong>Recent Updates</strong></summary>
-
-* **[v10.3.0](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.3.0)** (2026-10-04)
-* **[v10.2.0](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.2.0)** (2026-09-01)
-* **[v10.1.2](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.1.2)** (2026-08-02)
-* **[v10.1.0](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.1.0)** (2026-07-13)
-* **[v10.0.2](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.0.2)** (2026-07-13)
-
-Full history: [Release Notes](https://coplaydev.github.io/unity-mcp/releases).
-
-</details>
-<!-- recent-updates:end -->
-
----
-
-## What it does
-
-Control the Unity Editor in natural language from any MCP client — create scenes & GameObjects, edit C# scripts, manage assets, run tests, profile, and build. 50 focused MCP tool entrypoints, any client, free & MIT.
-
-**[Browse the full tool catalog →](https://coplaydev.github.io/unity-mcp/reference/tools/)**
-
----
-
-## Quickstart
-
-**Requirements:** Unity **2021.3 LTS → 6.x** · Python **3.10+** (via [`uv`](https://docs.astral.sh/uv/)). Works with **any MCP client** — Claude Desktop & Code, Cursor, VS Code, Windsurf, Cline, Gemini CLI, and more.
-
-1. **Install** — Unity → Package Manager → Add from git URL:
-   `https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main` &nbsp;_(pin `#v10.0.0` for this release, or `openupm add com.coplaydev.unity-mcp`)_
-2. **Configure** — `Window → MCP for Unity → Configure All Detected Clients`.
-3. **Prompt** — *"Create a cube at the origin and add a Rigidbody."* The cube appears in seconds.
-
----
-
-## Community
-
-- [Discord](https://discord.gg/y4p8KfzrN4) — chat with maintainers and other contributors
-- [Issues](https://github.com/CoplayDev/unity-mcp/issues) — bugs and feature requests
-- [Discussions](https://github.com/CoplayDev/unity-mcp/discussions) — design ideas and broader questions
-- Security: see [SECURITY.md](SECURITY.md) for private reporting
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Branch off `beta`, not `main`. The full dev setup, testing, and release process live in the [Contributing](https://coplaydev.github.io/unity-mcp/contributing/dev-setup) docs.
-
-## Advanced
-
-- **Multiple Unity instances** — [Multi-Instance Routing](https://coplaydev.github.io/unity-mcp/guides/multi-instance)
-- **Tool groups (vfx / animation / ui / testing / etc.)** — [Tool Groups](https://coplaydev.github.io/unity-mcp/guides/tool-groups)
-- **v10 asset generation and upgrade notes** — [v10 Migration](https://coplaydev.github.io/unity-mcp/migrations/v10)
-- **Roslyn script validation** — [Roslyn Validation](https://coplaydev.github.io/unity-mcp/guides/roslyn)
-- **Remote-hosted server with auth** — [Remote Server Auth](https://coplaydev.github.io/unity-mcp/guides/remote-server-auth)
-
-## Star History
-
-[![Star History Chart](https://star-history.dera.page/svg?repos=CoplayDev/unity-mcp&type=Date)](https://star-history.dera.page/#CoplayDev/unity-mcp&Date)
-
-## Citation
-
-If MCP for Unity helped your research, please cite it.
-
-```bibtex
-@inproceedings{wu2025mcpunity,
-  author    = {Wu, Shutong and Barnett, Justin P.},
-  title     = {{MCP-Unity}: {Protocol-Driven} Framework for Interactive {3D} Authoring},
-  year      = {2025},
-  isbn      = {9798400721366},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/3757376.3771417},
-  doi       = {10.1145/3757376.3771417},
-  series    = {SA Technical Communications '25}
-}
+```text
+https://r-fallingstar.github.io/unity-mcp-alcom/index.json
 ```
 
-## Unity AI Tools by Aura
+ALCOMの「パッケージ管理」でリポジトリを追加し、対象プロジェクトで **MCP for Unity (ALCOM)** をインストールしてください。以降は同じ画面の更新操作で更新できます。ベータ版を使う場合はALCOMのプレリリース表示を有効にします。Python 3.10以上とuvは別途必要です。
 
-Aura offers 2 AI tools for Unity:
-- **MCP for Unity** is available freely under the MIT license.
-- **Aura for Unity** is a premium Unity/Unreal AI assistant built for game devs.
+## 既存の手動配置からの移行
 
-## Disclaimer
+1. 作業を保存して対象のUnityプロジェクトを閉じ、プロジェクトをバックアップします。
+2. `Packages/com.coplaydev.unity-mcp` を手動で配置している場合は、そのフォルダーをプロジェクト外へ退避します。`Packages/manifest.json` にこのパッケージのGit URLやfile参照がある場合は、その項目を除きます。Assets配下に古いUnity MCPを配置している場合も重複しないよう退避します。
+3. ALCOMから同パッケージをインストールします。パッケージIDは既存と同じ `com.coplaydev.unity-mcp` です。
+4. Unityを開き、MCP for Unityウィンドウでローカルサーバーを再起動します。既存のサーバーURLの明示的な上書きは優先されます。同梱サーバーを使う場合はその上書きを解除してください。接続先は引き続きローカルに設定してください。
 
-This project is a free and open-source tool for the Unity Editor, and is not affiliated with Unity Technologies.
+このForkは現在開いているプロジェクトやシーンを自動で書き換えません。
 
----
+## 配布の仕組み
 
-**License:** MIT — see [LICENSE](LICENSE).
+- 既定の `alcom` ブランチに配布スクリプトと小さなオーバーレイパッチを保持します。本家の `main`（安定版）と `beta` の新しいパッケージバージョンをGitHub Actionsで毎日確認します。手動実行も可能です。
+- 各配布は本家の特定コミットから構築し、`provenance.json` にコミットを記録します。既に公開した同じバージョンは上書きしません。本家がバージョンを上げずに変更した場合は配布しません。
+- Pythonサーバーを `Server~/<version>/` に同梱します。Python側のメタデータも対応する版に合わせます。明示的な設定がない場合、Unity側はこのローカルパスを使用します。PyPI上の別のベータ版が選ばれる問題を避けます。
+- ZIPはルートに `package.json` を持ち、既存の `.meta` を維持します。VPM一覧にはSHA-256を記録します。公開前にパッケージテストと同梱サーバーの `--help` 起動確認を実行します。
+- 本家の変更でパッチが適用できない場合は公開処理が失敗し、既存の配布一覧を維持します。更新処理の成功は実際のUnityプロジェクト全体の互換性を保証するものではありません。
+- VPM一覧と追加ページを `gh-pages` ブランチへ発行し、GitHub Pagesで公開します。認証は実行時の `GITHUB_TOKEN` のみ使用し、個人用トークンは保存しません。
+- 本家のPyPI公開・ドキュメント公開・統計用ワークフローは `alcom` ブランチから除いています。
+
+## 開発・検証
+
+クリーンな本家のbetaチェックアウトを `_upstream/beta` に置いて実行します。
+
+```sh
+python -m unittest discover -s alcom/tests -v
+python alcom/build.py _upstream/beta dist/test
+```
+
+初回はActionsを有効にし、GitHub Pagesの配布元を `gh-pages` / root に設定します。Fork名・所有者を変える場合は `alcom/publish.py` と `alcom/index.html` のリポジトリURLも更新してください。
+
+本家の使用方法は [README.upstream.md](README.upstream.md)、ライセンスは [LICENSE](LICENSE) を参照してください。

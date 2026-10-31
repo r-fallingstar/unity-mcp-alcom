@@ -79,3 +79,8 @@ docs/superpowers/
 
 # Reference DLLs fetched by tools/compile-check.sh (not redistributable)
 .compile-refs/
+
+# ALCOM build workspaces
+/_upstream/
+/dist/
+/site/

@@ -1,0 +1,45 @@
+name: Publish ALCOM repository
+on:
+  push:
+    branches: [alcom]
+    paths: ['alcom/**', '.github/workflows/vpm.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: vpm-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: CoplayDev/unity-mcp
+          ref: main
+          path: _upstream/stable
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: CoplayDev/unity-mcp
+          ref: beta
+          path: _upstream/beta
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - name: Test packaging
+        run: python -m unittest discover -s alcom/tests -v
+      - name: Build, smoke test and publish releases
+        run: python alcom/publish.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Publish VPM listing
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
