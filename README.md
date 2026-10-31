@@ -28,7 +28,7 @@ ALCOMの「パッケージ管理」でリポジトリを追加し、対象プロ
 - Pythonサーバーを `Server~/<version>/` に同梱します。Python側のメタデータも対応する版に合わせます。明示的な設定がない場合、Unity側はこのローカルパスを使用します。PyPI上の別のベータ版が選ばれる問題を避けます。
 - ZIPはルートに `package.json` を持ち、既存の `.meta` を維持します。VPM一覧にはSHA-256を記録します。公開前にパッケージテストと同梱サーバーの `--help` 起動確認を実行します。
 - 本家の変更でパッチが適用できない場合は公開処理が失敗し、既存の配布一覧を維持します。更新処理の成功は実際のUnityプロジェクト全体の互換性を保証するものではありません。
-- VPM一覧と追加ページを `gh-pages` ブランチへ発行し、GitHub Pagesで公開します。認証は実行時の `GITHUB_TOKEN` のみ使用し、個人用トークンは保存しません。
+- VPM一覧と追加ページは公式の `actions/deploy-pages` でGitHub Pagesへ直接公開します。認証は実行時の `GITHUB_TOKEN` とOIDCのみ使用し、個人用トークンは保存しません。
 - 本家のPyPI公開・ドキュメント公開・統計用ワークフローは `alcom` ブランチから除いています。
 
 ## 開発・検証
@@ -40,6 +40,6 @@ python -m unittest discover -s alcom/tests -v
 python alcom/build.py _upstream/beta dist/test
 ```
 
-初回はActionsを有効にし、GitHub Pagesの配布元を `gh-pages` / root に設定します。Fork名・所有者を変える場合は `alcom/publish.py` と `alcom/index.html` のリポジトリURLも更新してください。
+初回はActionsを有効にし、GitHub Pagesの配布元を `GitHub Actions` に設定します。Fork名・所有者を変える場合は `alcom/publish.py` と `alcom/index.html` のリポジトリURLも更新してください。
 
 本家の使用方法は [README.upstream.md](README.upstream.md)、ライセンスは [LICENSE](LICENSE) を参照してください。
