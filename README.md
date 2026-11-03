@@ -43,3 +43,11 @@ python alcom/build.py _upstream/beta dist/test
 初回はActionsを有効にし、GitHub Pagesの配布元を `GitHub Actions` に設定します。Fork名・所有者を変える場合は `alcom/publish.py` と `alcom/index.html` のリポジトリURLも更新してください。
 
 本家の使用方法は [README.upstream.md](README.upstream.md)、ライセンスは [LICENSE](LICENSE) を参照してください。
+
+## このForkの保守への支援
+
+ALCOM向けの配布は、これからも無料で提供していく予定です。配布・更新対応・検証を続けるため、r-fallingstarへの任意の支援を受け付けています。
+
+[GitHub SponsorsでこのForkの保守を支援する](https://github.com/sponsors/r-fallingstar)
+
+支援はこの非公式Forkの保守に充てます。個別サポートや機能追加をお約束するものではありません。
